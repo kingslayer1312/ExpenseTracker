@@ -69,7 +69,7 @@ class ExpenseViewModel(
                     expenseAmount = expenseAmount
                 )
                 viewModelScope.launch {
-                    dao.upsertExpense(expense)
+                    dao.insertExpense(expense)
                 }
                 _state.update {
                         it.copy(
@@ -90,7 +90,7 @@ class ExpenseViewModel(
             }
             is ExpenseEvent.setExpenseAmount -> {
                 _state.update { it.copy(
-                    expenseAmount = event.expenseAmount
+                    expenseAmount = event.expenseAmount.toInt()
                 ) }
             }
             is ExpenseEvent.setExpenseName -> {
