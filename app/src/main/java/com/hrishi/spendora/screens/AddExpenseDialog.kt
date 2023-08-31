@@ -2,6 +2,7 @@ package com.hrishi.spendora.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -9,6 +10,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.input.KeyboardCapitalization
 import androidx.compose.ui.unit.dp
 import com.hrishi.spendora.repository.ExpenseEvent
 import com.hrishi.spendora.repository.ExpenseState
@@ -36,7 +38,8 @@ fun AddExpenseDialog(
                     },
                     placeholder = {
                         Text(text = "expense name")
-                    }
+                    },
+                    keyboardOptions = KeyboardOptions(capitalization = KeyboardCapitalization.Sentences)
                 )
                 TextField(
                     value = state.expenseType,
@@ -45,7 +48,8 @@ fun AddExpenseDialog(
                     },
                     placeholder = {
                         Text(text = "expense type")
-                    }
+                    },
+                    keyboardOptions = KeyboardOptions(capitalization = KeyboardCapitalization.Sentences)
                 )
                 TextField(
                     value = state.expenseAmount.toString(),
