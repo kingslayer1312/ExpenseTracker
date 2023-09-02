@@ -19,7 +19,6 @@ import androidx.room.Room
 import com.hrishi.spendora.database.ExpenseDatabase
 import com.hrishi.spendora.screens.ExpenseItemScreen
 import com.hrishi.spendora.screens.ExpenseListScreen
-import com.hrishi.spendora.screens.HomeScreen
 import com.hrishi.spendora.ui.theme.SpendoraTheme
 import com.hrishi.spendora.viewmodels.ExpenseViewModel
 
@@ -33,6 +32,7 @@ class MainActivity : ComponentActivity() {
         ).allowMainThreadQueries().build()
     }
 
+    @Suppress("UNCHECKED_CAST")
     private val viewModel by viewModels<ExpenseViewModel> (
         factoryProducer = {
             object : ViewModelProvider.Factory {
@@ -55,10 +55,7 @@ class MainActivity : ComponentActivity() {
                     val state by viewModel.state.collectAsState()
                     val navController = rememberNavController()
 
-                    NavHost(navController, startDestination = "home") {
-                        composable("home") {
-                            HomeScreen(navController, state = state, onEvent = viewModel::onEvent)
-                        }
+                    NavHost(navController, startDestination = "expense-list") {
                         composable("expense-list") {
                             ExpenseListScreen(navController, state = state, onEvent = viewModel::onEvent)
                         }

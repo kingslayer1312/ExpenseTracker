@@ -26,7 +26,7 @@ fun AddExpenseDialog(
         onDismissRequest = {
             onEvent(ExpenseEvent.HideDialog)
         },
-        title = { Text("Add contact") },
+        title = { Text("New Expense") },
         text = {
             Column(
                 verticalArrangement = Arrangement.spacedBy(8.dp)

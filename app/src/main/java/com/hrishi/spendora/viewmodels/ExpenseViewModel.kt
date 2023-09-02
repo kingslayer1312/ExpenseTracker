@@ -20,13 +20,14 @@ class ExpenseViewModel(
     private val dao : ExpenseDao
 ) : ViewModel() {
 
-    private val _sortType = MutableStateFlow(SortType.DESCENDING)
+    private val _sortType = MutableStateFlow(SortType.DEFAULT)
     @OptIn(ExperimentalCoroutinesApi::class)
     private val _expenses = _sortType
         .flatMapLatest { sortType ->
             when (sortType) {
                 SortType.ASCENDING -> dao.getExpensesAscending()
                 SortType.DESCENDING -> dao.getExpensesDescending()
+                SortType.DEFAULT -> dao.getExpenses()
             }
         }
         .stateIn(viewModelScope, SharingStarted.WhileSubscribed(), emptyList())

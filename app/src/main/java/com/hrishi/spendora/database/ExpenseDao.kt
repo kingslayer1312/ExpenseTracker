@@ -15,6 +15,9 @@ interface ExpenseDao {
     @Delete
     fun deleteExpense(expense : Expense)
 
+    @Query("SELECT * FROM expense")
+    fun getExpenses() : Flow<List<Expense>>
+
     @Query("SELECT * FROM expense ORDER BY expense_amount ASC")
     fun getExpensesAscending() : Flow<List<Expense>>
 

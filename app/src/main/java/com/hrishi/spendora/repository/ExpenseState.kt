@@ -8,5 +8,5 @@ data class ExpenseState(
     val expenseType : String = "",
     val expenseAmount : Int = 0,
     val isAddingExpense : Boolean = false,
-    val sortType: SortType = SortType.DESCENDING
+    val sortType: SortType = SortType.DEFAULT
 )
