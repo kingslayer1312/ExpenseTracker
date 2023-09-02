@@ -7,14 +7,4 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-
-    <color name="lightGreen">#FFBEEF9E</color>
-    <color name="olivine">#FFA6C36F</color>
-    <color name="mossGreen">#FF828C51</color>
-    <color name="brunswickGreen">#FF335145</color>
-    <color name="darkBlue">#FF000E17</color>
-    <color name="lightBlue">#FF36B8D9</color>
-    <color name="nordBlue">#FF26374C</color>
-    <color name="darkGreen">#FF062726</color>
-
 </resources>
