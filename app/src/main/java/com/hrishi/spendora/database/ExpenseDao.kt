@@ -23,5 +23,4 @@ interface ExpenseDao {
 
     @Query("SELECT * FROM expense ORDER BY expense_amount DESC")
     fun getExpensesDescending() : Flow<List<Expense>>
-
 }

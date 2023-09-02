@@ -17,7 +17,6 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.room.Room
 import com.hrishi.spendora.database.ExpenseDatabase
-import com.hrishi.spendora.screens.ExpenseItemScreen
 import com.hrishi.spendora.screens.ExpenseListScreen
 import com.hrishi.spendora.ui.theme.SpendoraTheme
 import com.hrishi.spendora.viewmodels.ExpenseViewModel
@@ -57,10 +56,7 @@ class MainActivity : ComponentActivity() {
 
                     NavHost(navController, startDestination = "expense-list") {
                         composable("expense-list") {
-                            ExpenseListScreen(navController, state = state, onEvent = viewModel::onEvent)
-                        }
-                        composable("expense-item") {
-                            ExpenseItemScreen(navController)
+                            ExpenseListScreen(/*navController,*/ state = state, onEvent = viewModel::onEvent)
                         }
                     }
                 }

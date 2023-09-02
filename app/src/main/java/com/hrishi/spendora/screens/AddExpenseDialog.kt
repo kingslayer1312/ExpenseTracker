@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonColors
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -14,7 +13,6 @@ import androidx.compose.material3.ExposedDropdownMenuBox
 import androidx.compose.material3.ExposedDropdownMenuDefaults
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
-import androidx.compose.material3.TextFieldColors
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -102,6 +100,15 @@ fun AddExpenseDialog(
                     ) {
                         DropdownMenuItem(
                             text = {
+                                Text(text = "Beauty", fontSize = 15.sp)
+                            },
+                            onClick = {
+                                onEvent(ExpenseEvent.setExpenseType("Beauty"))
+                                isExpanded = false
+                            }
+                        )
+                        DropdownMenuItem(
+                            text = {
                                 Text(text = "Entertainment", fontSize = 15.sp)
                             },
                             onClick = {
@@ -115,6 +122,24 @@ fun AddExpenseDialog(
                             },
                             onClick = {
                                 onEvent(ExpenseEvent.setExpenseType("Food"))
+                                isExpanded = false
+                            }
+                        )
+                        DropdownMenuItem(
+                            text = {
+                                Text(text = "Groceries", fontSize = 15.sp)
+                            },
+                            onClick = {
+                                onEvent(ExpenseEvent.setExpenseType("Groceries"))
+                                isExpanded = false
+                            }
+                        )
+                        DropdownMenuItem(
+                            text = {
+                                Text(text = "Healthcare", fontSize = 15.sp)
+                            },
+                            onClick = {
+                                onEvent(ExpenseEvent.setExpenseType("Healthcare"))
                                 isExpanded = false
                             }
                         )
