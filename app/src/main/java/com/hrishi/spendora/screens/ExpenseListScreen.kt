@@ -148,8 +148,7 @@ fun ExpenseListScreen(
                         Text(
                             text = expense.expenseType,
                             fontWeight = FontWeight.Bold,
-                            fontSize = 16.sp,
-                            fontStyle = FontStyle.Italic
+                            fontSize = 16.sp
                         )
                         Text(
                             modifier = Modifier.padding(top = 10.dp),
