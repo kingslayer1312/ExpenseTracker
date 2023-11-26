@@ -1,3 +1,3 @@
-# Spendora - Expense Tracker
+# Expense Tracker
 
-Spendora, a simplified expense tracker that helps manage expenses.
+A simplified expense tracker that helps manage expenses.
